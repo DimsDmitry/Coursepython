@@ -4,7 +4,7 @@ a = 5
 b = 10
 
 result = (a > 3) and (b < 8) or (a == 4)
-print(result)  # Вывод: True
+print(result)  # Вывод: False
 
 # Пример с использованием скобок
 result = ((a > 3) and (b < 8)) or ((a == 4) and (b == 7))

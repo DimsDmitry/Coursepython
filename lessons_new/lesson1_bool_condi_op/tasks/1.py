@@ -5,7 +5,7 @@
 # Исправь ошибки в авторизации пользователя.
 
 
-login = 'oleg_2505
+login = 'oleg_2505'
 password = input(login + ', введите пароль:')
-ok = password 'sweetstore111'
+ok = password == 'store25'
 print('Авторизация:', ok)
