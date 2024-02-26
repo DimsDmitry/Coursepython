@@ -1,2 +1,3 @@
-string1 = 'PYthon'.find('o')
-print(string1)
+text = 'hello'
+if 'l' in text:
+    print('Буква l обнаружена')

@@ -10,3 +10,16 @@
 # Введите промокод:>? hello
 # Введите промокод:>? kitty
 # Принято с попытки № 2
+
+promo = input('Введите промокод:')
+attempts = 1
+while promo != 'kitty':
+    attempts += 1
+    promo = input('Введите промокод:')
+    if attempts == 3:
+        break
+
+if promo == 'kitty':
+    print('Принято с попытки №', attempts)
+else:
+    print('Попытки закончились')
