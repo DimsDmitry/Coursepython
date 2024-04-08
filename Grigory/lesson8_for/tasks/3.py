@@ -10,10 +10,4 @@
 # Оценка:>? 4
 # Среднее: 3.3333333333333335
 
-total = 0
-count = input('Количество оценок:
-i in rang(count)
-    mark = input('Оценка:')
-    total + mark
-print('Среднее:', total%count)
 
