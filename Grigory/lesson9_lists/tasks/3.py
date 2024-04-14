@@ -12,10 +12,15 @@
 Список игр: ['cs go', 'dota']
 """
 
-games = []
-game = ('Введи игру (0 - остановить ввод):')
+games = list()
+game = input('Введи игру (0 - остановить ввод):')
 game = game.lower()
 while game != '0':
-
-print('Список игр:'
-games)
+    if game in games:
+        print('Эта игра уже записана')
+    else:
+        games.append(game)
+    game = input('Введи игру (0 - остановить ввод):')
+    game = game.lower()
+games.sort()
+print('Список игр:', games)
