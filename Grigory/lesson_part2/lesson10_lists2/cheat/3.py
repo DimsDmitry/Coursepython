@@ -9,4 +9,11 @@
 # Введите оценки через пробел:>? 5 2 3 5
 # Коэффициент успеваемости (%) - 50.0
 
-
+marks = input('Введите оценки через пробел:')
+marks = marks.split(' ')
+amount_five = 0
+for mark in marks:
+    if mark == '5':
+        amount_five += 1
+chance = amount_five / len(marks) * 100
+print('Коэффициент успеваемости (%) -', chance)
