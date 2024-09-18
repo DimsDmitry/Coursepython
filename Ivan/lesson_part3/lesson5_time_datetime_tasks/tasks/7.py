@@ -6,4 +6,10 @@
 Сек: >? 29
 23:12:29
 '''
+from datetime import *
+hours = int(input('Часы:'))
+mins = int(input('Мин:'))
+seconds = int(input('Сек:'))
 
+result = time(hours, mins, seconds)
+print(result)

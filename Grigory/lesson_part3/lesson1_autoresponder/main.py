@@ -8,3 +8,9 @@ while answer != 'off':
         result = music()
         print(result)
         answer = input('1 - рекомендация музыки, 2 - анекдот, 3 - пообщаться, 4 - магазин. off - завершить')
+    if answer == '2':
+        result = get_joke()
+        print(result)
+    if answer == '3':
+        result = talking()
+        print(result)
