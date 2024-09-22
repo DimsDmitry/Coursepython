@@ -6,7 +6,6 @@
 from turtle import *
 
 speed(0)
-pensize(3)
 
 
 def red_light_on():
@@ -18,32 +17,34 @@ def red_light_on():
     circle(35)
     end_fill()
 
-    color("yellow")
-    penup()
-    goto(0, 0)
-    pendown()
-    circle(35)
 
-    color("green")
-    penup()
-    goto(0, -100)
-    pendown()
-    circle(35)
-
-
-def green_light_on():
+def red_light_off():
     color("red")
     penup()
     goto(0, 100)
     pendown()
     circle(35)
 
+
+def yellow_light_on():
+    color("yellow")
+    penup()
+    goto(0, 0)
+    pendown()
+    begin_fill()
+    circle(35)
+    end_fill()
+
+
+def yellow_light_off():
     color("yellow")
     penup()
     goto(0, 0)
     pendown()
     circle(35)
 
+
+def green_light_on():
     color("green")
     penup()
     goto(0, -100)
@@ -53,9 +54,26 @@ def green_light_on():
     end_fill()
 
 
-red_light_on()
-green_light_on()
+def green_light_off():
+    color("green")
+    penup()
+    goto(0, -100)
+    pendown()
+    circle(35)
 
-# answer = input("Какой горит цвет красный/жёлтый/зелёный?")
-# if answer == "красный":
-#     red_light_on()
+
+answer = input("Какой горит цвет красный/жёлтый/зелёный?")
+if answer == "красный":
+    red_light_on()
+    yellow_light_off()
+    green_light_off()
+if answer == "жёлтый":
+    red_light_off()
+    yellow_light_on()
+    green_light_off()
+if answer == "зелёный":
+    red_light_off()
+    yellow_light_off()
+    green_light_on()
+hideturtle()
+exitonclick()

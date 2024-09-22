@@ -8,6 +8,8 @@ from turtle import *
 def day():
     pensize(2)
     color("yellow")
+    for i in range(18):
+
 
 
 
