@@ -1,5 +1,3 @@
-name = 'Олег'
-subject = 'математика'
+a = 10
 
-print(name, 'посещает предмет:', subject)
-print(f'{name} посещает предмет: {subject}')
+print(abs(a))
