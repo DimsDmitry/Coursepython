@@ -57,6 +57,7 @@ def divide():
         t4.forward(400)
         t4.right(90)
 
+
 divide()
 # создаём черепашек
 t1 = Turtle()
