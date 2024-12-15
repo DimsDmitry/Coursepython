@@ -18,6 +18,19 @@ class Tank:
         self.health = health  # здоровье
         self.damage = damage  # урон
         self.speed = speed  # скорость
+        # свойство класса self.avoidance - будет показывать шанс уклонения в %
+        if self.category == 'лёгкий':
+            self.avoidance = 50
+        elif self.category == 'пт-сау':
+            self.avoidance = 35
+        elif self.category == 'средний':
+            self.avoidance = 30
+        elif self.category == 'тяжёлый':
+            self.avoidance = 20
+        elif self.category == 'артиллерия':
+            self.avoidance = 15
+        else:
+            self.avoidance = 25
 
     def print_info(self):
         print(f'В битву вступает грозный танк {self.name}')
@@ -28,16 +41,21 @@ class Tank:
 
     def shoot(self, enemy):
         """Стреляем в противника, отнимая его очки брони и здоровья"""
-        attack = self.damage
-        print(f'ЕСТЬ ПРОБИТИЕ! {self.name} атакует {enemy.name}. Нанесённый урон: {attack}')
-        sleep(1)
-        enemy.armor -= attack
-        if enemy.armor < 0:
-            # если броня стала ниже нуля - оставшийся урон идёт в здоровье
-            enemy.health += enemy.armor
-            # а броню обнуляем
-            enemy.armor = 0
-        print(f'{enemy.name} получил урон! Его броня - {enemy.armor}, здоровье - {enemy.health}\n')
+        miss_chance = randint(1, 100)
+        if miss_chance > enemy.avoidance:
+            # попадание! противнику не повезло
+            attack = randint(self.damage - 20, self.damage)
+            print(f'ЕСТЬ ПРОБИТИЕ! {self.name} атакует {enemy.name}. Нанесённый урон: {attack}')
+            sleep(1)
+            enemy.armor -= attack
+            if enemy.armor < 0:
+                # если броня стала ниже нуля - оставшийся урон идёт в здоровье
+                enemy.health += enemy.armor
+                # а броню обнуляем
+                enemy.armor = 0
+            print(f'{enemy.name} получил урон! Его броня - {enemy.armor}, здоровье - {enemy.health}\n')
+        else:
+            print('Промах!\n')
         sleep(4)
 
     def fight(self, enemy):
@@ -55,11 +73,10 @@ class Tank:
                 break
 
 
-tank1 = Tank('Т-34', 4, 'средний', 'СССР', 20, 100, 50, 60)
+tank1 = Tank('Т-34', 4, 'средний', 'СССР', 50, 200, 50, 60)
 tank1.print_info()
 
-tank2 = Tank('Tiger', 7, 'тяжёлый', '3-й Рейх', 40, 120, 80, 20)
+tank2 = Tank('Tiger', 7, 'тяжёлый', '3-й Рейх', 80, 250, 80, 20)
 tank2.print_info()
 
 tank1.fight(tank2)
-

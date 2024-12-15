@@ -36,17 +36,20 @@ class Candy:
         self.price = price
         self.weight = weight
 
+
 class Chocolate(Candy):
     def __init__(self, name, price, weight, cocoa_percentage, chocolate_type):
         super().__init__(name, price, weight)
         self.cocoa_percentage = cocoa_percentage
         self.chocolate_type = chocolate_type
 
+
 class Gummy(Candy):
     def __init__(self, name, price, weight, flavor, shape):
         super().__init__(name, price, weight)
         self.flavor = flavor
         self.shape = shape
+
 
 class HardCandy(Candy):
     def __init__(self, name, price, weight, flavor, filled):

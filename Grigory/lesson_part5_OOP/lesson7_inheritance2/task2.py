@@ -8,4 +8,4 @@
 # Triangle – атрибуты base и height (основание и высота), собственный метод area().
 
 class Shape:
-    pass
+    def __init__(self):
