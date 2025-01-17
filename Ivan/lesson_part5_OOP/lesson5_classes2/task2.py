@@ -37,10 +37,22 @@ class Student:
         print('Посещает курс по выбору:', self.course, '\n')
 
     def select_course(self):
-        pass
-    # set_average_grade
-    #     marks = input('Введите оценки через пробел').split()
+        course = input('Введите название курса:')
+        self.course = course
+
+    def set_average_grade(self):
+        marks = input('Введите оценки через пробел').split()
+        summ = 0
+        for m in marks:
+            summ += int(m)
+        average = round(summ / len(marks), 2)
+        self.average_grade = average
 
 
 student = Student('Иванов')
+student.print_info()
+
+student.select_course()
+student.set_average_grade()
+
 student.print_info()

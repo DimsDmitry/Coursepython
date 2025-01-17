@@ -1,3 +1,8 @@
-a = 10
+marks = '5 3 4 2 1 4 5'.split()
+summ = 0
+print(marks)
+for m in marks:
+    summ += int(m)
 
-print(abs(a))
+average = round(summ/len(marks), 2)
+print(average)

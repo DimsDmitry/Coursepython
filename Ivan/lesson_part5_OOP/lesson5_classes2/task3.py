@@ -21,3 +21,19 @@
 """
 
 
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def print_info(self):
+        print(f'Прямоугольник с длиной {self.length} и шириной {self.width}')
+
+    def calc_perimeter(self):
+        perimeter = 2 * (self.length + self.width)
+
+
+a = int(input('Введите длину прямоугольника:'))
+b = int(input('Введите ширину прямоугольника:'))
+rect1 = Rectangle(a, b)
+rect1.print_info()
