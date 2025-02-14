@@ -7,4 +7,9 @@ from typing import List
 
 
 def squares(numbers: List[int]) -> List[int]:
-    return [n ** 2 for n in numbers]
+    return list(map(lambda num: num ** 2, numbers))
+
+
+res = squares([2, 3, 5, 0, 9])
+print(res)
+

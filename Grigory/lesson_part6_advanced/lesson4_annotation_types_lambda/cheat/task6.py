@@ -6,6 +6,8 @@
 
 from typing import Union
 
+
 def process_data(data: Union[int, str]) -> str:
     if isinstance(data, int):
         return str(data)
+    return data.upper()

@@ -1,4 +1,7 @@
-"""Аннотация типов не обеспечивает проверку типов на уровне интерператора.
+"""Статическая типизация - проверка типов перед запуском программы, ошибка в случае несоответствия
+Динамическая - проверка типов данных уже после запуска программы.
+Язык Python динамически типизированный
+Аннотация типов не обеспечивает проверку типов на уровне интерператора.
 Она нужна для разработчиков и для более удобного понимания кода
 Python поддерживает аннотацию типов для типов данных:
 str, int, float, bool, None
@@ -62,7 +65,7 @@ from typing import Union, TypedDict
 
 
 def get_my_temperature() -> Union[int, float]:
-    return '36.6'
+    return 36.6
 
 
 result = get_my_temperature()
@@ -76,8 +79,42 @@ class User(TypedDict):
     card_number: Union[str, int]
 
 
-user1: User = {login: 'Dima123', card_number: '22022002'}
+user1: User = {'login': 'Dima123', 'card_number': '22022002'}
 # или можно сделать его инстанс - объект класса
 print(user1)
 
 # NoReturn, Final
+from typing import NoReturn
+
+
+# используется для объявления того, что функция не имеет возврата
+
+def greeting() -> NoReturn:
+    print('Hello!')
+
+
+from typing import Final
+
+# используется для объявления того, что переменная
+# НЕ ДОЛЖНА БЫТЬ повторно назначена или переопределена (константа)
+
+MIN_PASSWORD_LENGTH: Final = 5
+print(MIN_PASSWORD_LENGTH)
+
+# Создайте функцию squares, которая принимает список целых чисел и возвращает новый список,
+# содержащий квадраты этих чисел. Используйте аннотации типов.
+
+from typing import List
+
+
+def squares(numbers: List[int]) -> List[int]:
+    return list(map(lambda num: num ** 2, numbers))
+
+
+res = squares([2, 3, 5, 0, 9])
+print(res)
+
+# пример лямбда функции
+triple = lambda x: x*3
+
+print(triple(5))

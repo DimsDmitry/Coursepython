@@ -1,8 +1,8 @@
-marks = '5 3 4 2 1 4 5'.split()
-summ = 0
-print(marks)
-for m in marks:
-    summ += int(m)
+def do_something(a, b):
+    return a * b, a + b
 
-average = round(summ/len(marks), 2)
-print(average)
+
+# распаковка кортежа:
+digit, summ = do_something(2, 10)
+print(digit)
+print(summ)
