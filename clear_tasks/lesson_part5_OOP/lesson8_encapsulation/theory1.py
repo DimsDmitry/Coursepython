@@ -18,7 +18,7 @@ class Book:
 
     def set_title(self, title):
         # это сеттер - метод, позволяющий установить значение приватного атрибута
-        # set_title ИЗВНxbb Е класса
+        # set_title ИЗВНЕ класса
         self.__title = title
 
     def get_title(self):
