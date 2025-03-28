@@ -1,1 +1,3 @@
-text = `Hello`
+text = 'Привет!'
+
+print(text[:3])

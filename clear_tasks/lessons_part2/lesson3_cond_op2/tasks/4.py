@@ -2,4 +2,4 @@
 # напечатайте соответствующее сообщение.
 
 string = input('')
-if string == 'hello':
+if string = 'hello':
