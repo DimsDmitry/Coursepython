@@ -6,5 +6,5 @@
 
 
 feedback = input('Оставьте отзыв о путешествии:')
-length =
+length = len(feedback)
 print('Спасибо за подробный отзыв! В нём целых', length, 'символов!')

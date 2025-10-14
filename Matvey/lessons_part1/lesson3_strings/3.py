@@ -12,6 +12,8 @@ dishes = input('Введите любимые блюда ресторана "А�
 searching1 = 'фондю'
 searching2 = 'жульен'
 
-result1 = dishes.
+result1 = dishes.find(searching1)
+result2 = dishes.find(searching2)
 
 print(searching1, result1)
+print(searching2, result2)

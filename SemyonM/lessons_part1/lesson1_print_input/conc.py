@@ -1,0 +1,6 @@
+print(2 * 3)
+print('2' * '3')
+print('Hello' + ' world')
+name = input('Ваше имя: ')
+city = input('Ваш город: ')
+print(name + '/' + city)

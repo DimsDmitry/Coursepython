@@ -7,8 +7,8 @@
 
 
 id_number = 82948150
-surname == Иванкин
-tour = Мадагаскар
+surname = 'Иванкин'
+tour = 'Мадагаскар'
 
-client_data = str(
-print('Информация о клиенте:',client_data)
+client_data = str(id_number) + '/' + surname + '/' + tour
+print('Информация о клиенте:', client_data)
