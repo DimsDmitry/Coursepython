@@ -7,3 +7,9 @@
 # Город: [город]
 
 name = input('Имя:')
+age = input('Возраст:')
+city = input('Город:')
+
+print('Имя: [' + name + ']')
+print('Возраст: [' + age + ']')
+print('Город: [' + city + ']')
