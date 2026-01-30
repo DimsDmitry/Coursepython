@@ -1,5 +1,6 @@
-from city import *
 from turtle import *
+
+from city import *
 
 speed(0)
 draw_landscape()
