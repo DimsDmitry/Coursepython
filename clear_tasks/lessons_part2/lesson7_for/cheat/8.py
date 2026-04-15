@@ -21,4 +21,5 @@ for symbol in password:
         result += '0'
     elif symbol in consonants:
         result += '1'
+    print(result)
 print(result)

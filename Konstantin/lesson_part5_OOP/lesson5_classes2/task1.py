@@ -12,8 +12,10 @@
 
 
 class Animal:
-    def __init__(self, species,):
+    def __init__(self, species, voice, name):
         self.species = species
+        self.voice = voice
+        self.name = name
 
 
     def print_info(self):
@@ -23,6 +25,6 @@ class Animal:
 species = input('Какой вид вашего животного?')
 voice =
 
-my_animal =
+my_animal = Animal()
 
 print_info()

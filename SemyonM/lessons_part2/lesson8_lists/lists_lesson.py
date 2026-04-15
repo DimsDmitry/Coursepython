@@ -1,11 +1,21 @@
+# список - упорядоченная структура данных,
+# которая хранят в себе данные разных типов
+
+# создание списка
+
 test_list = []
 test_list = list()
 
 test_list = [5, 3, 2, 4, 2, 5]
 print(len(test_list))  # длина списка
 test_list.append(10)  # добавить элемент в список
-test_list.sort()
+print(test_list)
+test_list.sort()  # отсортировать числа по возрастанию, строки по алфавиту
+print(test_list)
+test_list.sort(reverse=True)  # отсортировать наоборот
+print(test_list)
 test_list.insert(2, 9)
+print(test_list)
 while 5 in test_list:
     test_list.remove(5)
     # удаление всех значений 5

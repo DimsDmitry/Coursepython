@@ -29,6 +29,7 @@ print(list1)
 # срез
 
 list2 = ['text', 'hello', 4, 2, 10, 15]
+print(list2)
 print(list2[:3])  # от 0 до 3
 print(list2[3:])  # от 3 до конца
 print(list2[1:5:2])  # от 1 до 5 с шагом 2

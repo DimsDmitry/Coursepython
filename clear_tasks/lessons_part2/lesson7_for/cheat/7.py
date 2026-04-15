@@ -8,5 +8,5 @@ text = 'ППррииввеетт!!  ККаакк  ддееллаа??  ССеег
 
 
 result = ''
-for i in range(0, len(message), 2):
-    result += message[i]
+for i in range(0, len(text), 2):
+    result += text[i]

@@ -3,11 +3,101 @@
 # она поворачивается на случайный угол и откидывается назад на произвольное количество шагов.
 # Победа - пользователь продержался 30 (или меньше, по желанию) секунд, поражение - одна из черепашек дошла до края
 # Пример - см фото
-
-
 from turtle import *
 from random import randint
 from time import sleep
 
 w = 200
 h = 200
+
+def catch1(x, y):
+    """описывает нажатие на черепашку 1"""
+    t1.penup()
+    t1.goto(randint(-100, 100), randint(-100, 100))
+    t1.pendown()
+    t1.left(randint(0, 180))
+
+def catch2(x, y):
+    """описывает нажатие на черепашку 2"""
+    t2.penup()
+    t2.goto(randint(-100, 100), randint(-100, 100))
+    t2.pendown()
+    t2.left(randint(0, 180))
+
+def catch3(x, y):
+    """описывает нажатие на черепашку 3"""
+    t3.penup()
+    t3.goto(randint(-100, 100), randint(-100, 100))
+    t3.pendown()
+    t3.left(randint(0, 180))
+
+def divide():
+    """рисует рамку для игрового поля"""
+    # создаём черепашку, назначаем ей нужные характеристики
+    t4 = Turtle()
+    t4.pensize(5)
+    t4.penup()
+    t4.goto(-200, 200)
+    t4.pendown()
+    # рисуем квадрат размером во всё поле
+    for i in range(4):
+        t4.forward(400)
+        t4.right(90)
+    t4.hideturtle()  # убираем черепашку
+
+def stop_game(t1, t2, t3):
+    """проверяет, не достигла ли каждая из черепашек финиша"""
+    # проверяем модуль координаты X и Y каждой черепашки
+    # он не должен превышать 200. если хотя бы один из показателей
+    # превысит 200, флаг черепашки примет значение True
+    t1_out = abs(t1.xcor()) > w or abs(t1.ycor()) > h
+    t2_out = abs(t2.xcor()) > w or abs(t2.ycor()) > h
+    t3_out = abs(t3.xcor()) > w or abs(t3.ycor()) > h
+    """теперь проверяем - если хотя бы одна из черепашек выбыла,
+    то переменная out принимает значение False, если никто не выбыл - True
+    Функция будет возвращать именно логическое значение, показывающее выбыл
+    кто-то или нет"""
+    out = t1_out or t2_out or t3_out
+    return out
+
+# черепашка 1
+t1 = Turtle()
+t1.color('blue')
+t1.width(5)
+t1.shape('turtle')
+
+# черепашка 2
+t2 = Turtle()
+t2.color('green')
+t2.width(5)
+t2.shape('turtle')
+t2.left(120)
+
+# черепашка 3
+t3 = Turtle()
+t3.color('red')
+t3.width(5)
+t3.shape('turtle')
+t3.left(-120)
+
+# привязываем функции-обработчики клика к каждой черепашке
+
+t1.onclick(catch1)
+t2.onclick(catch2)
+t3.onclick(catch3)
+
+sleep(1)
+# рисуем границы
+divide()
+
+sleep(1)
+
+while not stop_game(t1, t2, t3):
+    """игра длится до тех пор, пока функция stop_game возвращает False,
+    т.е. пока все черепашки находятся внутри границ игры"""
+    t1.forward(7)
+    t2.forward(7)
+    t3.forward(7)
+    sleep(0.1)
+
+exitonclick()

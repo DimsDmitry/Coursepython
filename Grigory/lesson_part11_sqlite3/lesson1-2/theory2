@@ -1,0 +1,9 @@
+CRUD — это 4 главных действия: Create (Создать), Read (Прочитать), Update (Обновить), Delete (Удалить).
+
+Создание: CREATE TABLE table_name (....)
+
+Добавление: INSERT INTO users (name, score) VALUES ('Иван', 10)
+
+Чтение: SELECT * FROM users
+
+Обновление: UPDATE users SET score = 15 WHERE name = 'Иван'

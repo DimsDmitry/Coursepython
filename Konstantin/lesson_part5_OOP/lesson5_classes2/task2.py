@@ -34,6 +34,7 @@ class Student:
 
 
     def select_course(self):
+        self.course = input('Введите курс:')
 
     set_average_grade
         marks = input('Введите оценки через пробел').split()
